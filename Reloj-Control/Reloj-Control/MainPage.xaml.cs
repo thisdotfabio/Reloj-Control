@@ -26,5 +26,10 @@ namespace Reloj_Control
         {
             this.InitializeComponent();
         }
+
+        private void hola_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //myClock.Time = hola.Text;
+        }
     }
 }
