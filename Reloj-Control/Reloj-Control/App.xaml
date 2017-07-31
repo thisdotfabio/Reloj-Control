@@ -5,4 +5,8 @@
     xmlns:local="using:Reloj_Control"
     RequestedTheme="Light">
 
+    <Application.Resources>
+        <local:StringFormatConverter x:Key="StringFormat"/>
+    </Application.Resources>
+
 </Application>

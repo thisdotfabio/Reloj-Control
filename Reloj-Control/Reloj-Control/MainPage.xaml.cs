@@ -27,9 +27,9 @@ namespace Reloj_Control
             this.InitializeComponent();
         }
 
-        private void hola_TextChanged(object sender, TextChangedEventArgs e)
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
         {
-            //myClock.Time = hola.Text;
+            Frame.Navigate(typeof(SettingPage));
         }
     }
 }

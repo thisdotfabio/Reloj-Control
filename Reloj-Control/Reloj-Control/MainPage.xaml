@@ -9,6 +9,11 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <local:Clock x:Name="myClock" Margin="0,0,0,50"/>
-        <TextBox x:Name="hola" VerticalAlignment="Bottom" TextChanged="hola_TextChanged"/>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="HistoryButton" Icon="Clock" Label="Historial" />
+            <AppBarButton x:Name="SettingButton" Icon="Setting" Label="Config." Click="SettingButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

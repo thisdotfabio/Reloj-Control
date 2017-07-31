@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="Reloj_Control.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Reloj_Control"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="48" Text="Botones"/>
+        <ListView Grid.Row="1">
+            <ListViewItem>hola</ListViewItem>
+        </ListView>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="AddButton" Icon="Add" Click="AddButton_Click" />
+            <AppBarButton x:Name="SelectButton" Icon="Bullets" />
+            <AppBarButton x:Name="DeleteButton" Icon="Delete" Visibility="Collapsed" />
+            <AppBarButton x:Name="CancelButton" Icon="Cancel" Visibility="Collapsed" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

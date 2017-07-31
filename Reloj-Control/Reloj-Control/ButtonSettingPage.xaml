@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Reloj_Control.ButtonSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <TextBlock Margin="20,15" FontSize="24" FontWeight="SemiBold" Text="EDITAR BOTÓN"/>
+            <TextBlock Margin="20,0,20,5" Text="Nombre del botón"/>
+            <TextBox x:Name="LabelButtonTextBox" Margin="20,0,20,10" TextChanged="ButtonSetting_Changed"/>
+            <TextBlock Margin="20,0,20,5" Text="Color del botón"/>
+            <ComboBox x:Name="ColorButtonComboBox" Margin="20,0,20,10" Width="150" SelectionChanged="ButtonSetting_Changed">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Border Background="{x:Bind}" Height="20"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Padding" Value="8,2"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <TextBlock Margin="20,0,20,5" Text="Mensaje impreso"/>
+            <TextBox x:Name="MessageTextBox" Margin="20,0,20,10" TextChanged="ButtonSetting_Changed"/>
+            <TextBlock Margin="20,0,20,5" Text="Color del mensaje"/>
+            <ComboBox x:Name="ColorMessageComboBox" Margin="20,0,20,10" Width="150" SelectionChanged="ButtonSetting_Changed">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Border Background="{x:Bind}" Height="20"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Padding" Value="8,2"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <TextBlock Margin="20,0,20,5" Text="Formato de la hora impresa"/>
+            <TextBox x:Name="TimeFormatTextBox" Margin="20,0,20,10" TextChanged="ButtonSetting_Changed"/>
+            <TextBlock Margin="20,0,20,5" Text="Posición de la hora"/>
+            <ComboBox x:Name="TimePositionComboBox" Margin="20,0,20,10" Width="150" ItemsSource="{Binding ButtonSetting.Position}" SelectionChanged="ButtonSetting_Changed">
+                <ComboBoxItem>Al inicio</ComboBoxItem>
+                <ComboBoxItem>Al final</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+    </ScrollViewer>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="SaveButton" Label="Guardar" Icon="Save" IsEnabled="False" Click="SaveButton_Click"/>
+            <AppBarButton x:Name="CancelButton" Label="Cancelar" Icon="Cancel" Click="CancelButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
